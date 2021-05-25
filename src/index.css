@@ -1,0 +1,72 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+html, body, .doc-container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.doc-container {
+    font-size: 14px;
+    background-color: #f9fafb;
+    font-family: "PingFang SC", "Microsoft YaHei", 黑体, 宋体, sans-serif;
+}
+.doc-toolbar {
+
+}
+.doc-toolbar-wrapper{
+    height: 44px;
+    padding: 8px 0;
+    margin: 0 auto;
+    display: flex;
+    width: max-content;
+}
+.doc-toolbar-btn{
+    margin: 0 8px;
+    opacity: 0.2;
+    background: rgba(0, 0, 0, 0.04);
+    display: flex;
+    cursor: default;
+}
+.doc-toolbar-btn.enable{
+    opacity: 1;
+    background: none;
+}
+.doc-toolbar-btn.enable:hover{
+    background-color: #eff0f1;
+}
+.doc-toolbar-btn.enable:active{
+    background-color: #e5e6e7;
+}
+.doc-toolbar-btn-divide{
+    margin: 6px 8px 8px;
+    height: 16px;
+    width: 1px;
+    opacity: 0.12;
+    background-color: rgb(0, 0, 0);
+    vertical-align: top;
+    display: inline-block;
+}
+.doc-toolbar-btn-text>span{
+    position: relative;
+    bottom: 7px;
+    right: 6px;
+    opacity: 0.8;
+}
+.doc-toolbar-btn-icon>div{
+    background: url("data:image/svg+xml,%3C%3Fxml version%3D%221.0%22 encoding%3D%22UTF-8%22%3F%3E%3Csvg width%3D%226px%22 height%3D%224px%22 viewBox%3D%220 0 6 4%22 version%3D%221.1%22 xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E    %3C!-- Generator%3A Sketch 55.2 (78181) - https%3A%2F%2Fsketchapp.com --%3E    %3Ctitle%3E%E5%B7%A5%E5%85%B7%E6%A0%8F%E4%B8%8B%E6%8B%89%E7%AE%AD%E5%A4%B4%3C%2Ftitle%3E    %3Cdesc%3ECreated with Sketch.%3C%2Fdesc%3E    %3Cg id%3D%22%E4%BC%98%E5%8C%96-web%22 stroke%3D%22none%22 stroke-width%3D%221%22 fill%3D%22none%22 fill-rule%3D%22evenodd%22 opacity%3D%220.400000006%22%3E        %3Cg id%3D%22excel_%E4%B8%BB%E6%A1%86%E6%9E%B6%22 transform%3D%22translate(-428.000000%2C -76.000000)%22 fill%3D%22%23000000%22 fill-rule%3D%22nonzero%22%3E            %3Cpolygon id%3D%22%E5%B7%A5%E5%85%B7%E6%A0%8F%E4%B8%8B%E6%8B%89%E7%AE%AD%E5%A4%B4%22 points%3D%22428 76 434 76 431.011701 80%22%3E%3C%2Fpolygon%3E        %3C%2Fg%3E    %3C%2Fg%3E%3C%2Fsvg%3E") no-repeat;
+    float: right;
+    margin: 11px 0 0;
+    padding: 0;
+    vertical-align: middle;
+    width: 6px;
+    height: 4px;
+    top: 1px;
+}
+
+.doc-content {
+
+}
