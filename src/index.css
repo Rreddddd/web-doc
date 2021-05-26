@@ -13,35 +13,48 @@ html, body, .doc-container {
     font-size: 14px;
     background-color: #f9fafb;
     font-family: "PingFang SC", "Microsoft YaHei", 黑体, 宋体, sans-serif;
+    position: relative;
 }
-.doc-toolbar {
 
+.doc-toolbar {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #f9fafb;
 }
-.doc-toolbar-wrapper{
+
+.doc-toolbar-wrapper {
     height: 44px;
     padding: 8px 0;
     margin: 0 auto;
     display: flex;
     width: max-content;
 }
-.doc-toolbar-btn{
+
+.doc-toolbar-btn {
     margin: 0 8px;
     opacity: 0.2;
     background: rgba(0, 0, 0, 0.04);
     display: flex;
     cursor: default;
 }
-.doc-toolbar-btn.enable{
+
+.doc-toolbar-btn.enable {
     opacity: 1;
     background: none;
 }
-.doc-toolbar-btn.enable:hover{
+
+.doc-toolbar-btn.enable:hover {
     background-color: #eff0f1;
 }
-.doc-toolbar-btn.enable:active{
+
+.doc-toolbar-btn.enable:active {
     background-color: #e5e6e7;
 }
-.doc-toolbar-btn-divide{
+
+.doc-toolbar-btn-divide {
     margin: 6px 8px 8px;
     height: 16px;
     width: 1px;
@@ -50,13 +63,16 @@ html, body, .doc-container {
     vertical-align: top;
     display: inline-block;
 }
-.doc-toolbar-btn-text>span{
+
+.doc-toolbar-btn-text > span {
     position: relative;
     bottom: 7px;
     right: 6px;
     opacity: 0.8;
+    padding-left: 2px;
 }
-.doc-toolbar-btn-icon>div{
+
+.doc-toolbar-btn-icon > div {
     background: url("data:image/svg+xml,%3C%3Fxml version%3D%221.0%22 encoding%3D%22UTF-8%22%3F%3E%3Csvg width%3D%226px%22 height%3D%224px%22 viewBox%3D%220 0 6 4%22 version%3D%221.1%22 xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E    %3C!-- Generator%3A Sketch 55.2 (78181) - https%3A%2F%2Fsketchapp.com --%3E    %3Ctitle%3E%E5%B7%A5%E5%85%B7%E6%A0%8F%E4%B8%8B%E6%8B%89%E7%AE%AD%E5%A4%B4%3C%2Ftitle%3E    %3Cdesc%3ECreated with Sketch.%3C%2Fdesc%3E    %3Cg id%3D%22%E4%BC%98%E5%8C%96-web%22 stroke%3D%22none%22 stroke-width%3D%221%22 fill%3D%22none%22 fill-rule%3D%22evenodd%22 opacity%3D%220.400000006%22%3E        %3Cg id%3D%22excel_%E4%B8%BB%E6%A1%86%E6%9E%B6%22 transform%3D%22translate(-428.000000%2C -76.000000)%22 fill%3D%22%23000000%22 fill-rule%3D%22nonzero%22%3E            %3Cpolygon id%3D%22%E5%B7%A5%E5%85%B7%E6%A0%8F%E4%B8%8B%E6%8B%89%E7%AE%AD%E5%A4%B4%22 points%3D%22428 76 434 76 431.011701 80%22%3E%3C%2Fpolygon%3E        %3C%2Fg%3E    %3C%2Fg%3E%3C%2Fsvg%3E") no-repeat;
     float: right;
     margin: 11px 0 0;
@@ -67,6 +83,45 @@ html, body, .doc-container {
     top: 1px;
 }
 
-.doc-content {
+.scroll-shadow {
+    position: absolute;
+    z-index: 2;
+    top: 44px;
+    height: 6px;
+    width: 100%;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0, 0, 0, 0.06)), to(transparent));
+    transition: opacity .3s ease-in-out;
+    opacity: 0;
+}
+.scroll-shadow.show {
+    opacity: 1;
+}
 
+.doc-content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 50px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.doc-content-wrapper {
+    margin: 0 auto;
+    width: 810px;
+    min-height: 1200px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px #e8d9d9;
+    padding: 120px 100px;
+    transition: width .3s ease-in-out;
+}
+.doc-content.print{
+    z-index: 10;
+    padding: 0;
+}
+.doc-content.print .doc-content-wrapper{
+    width: 100%;
+    box-shadow: none;
 }
