@@ -1,0 +1,22 @@
+.web-doc-scroll-container{
+    position: relative;
+    overflow: hidden;
+}
+.web-doc-scroll-bar{
+    position: absolute;
+    background-color: #dbdcdc;
+    border-radius: 5px;
+    user-select: none;
+    transition: top 300ms;
+}
+.web-doc-scroll-bar.click{
+    transition: none;
+}
+.web-doc-scroll-bar.vertical{
+    right: 0;
+    top: 0;
+    width: 8px;
+}
+.web-doc-scroll-bar:hover{
+    background-color: #cccccc;
+}

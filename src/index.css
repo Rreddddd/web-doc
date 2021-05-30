@@ -104,6 +104,7 @@ html, body, .doc-container {
     top: 0;
     left: 0;
     padding-top: 50px;
+    padding-bottom: 50px;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -115,7 +116,7 @@ html, body, .doc-container {
     background-color: #ffffff;
     box-shadow: 0 0 10px #e8d9d9;
     padding: 120px 100px;
-    transition: width .3s ease-in-out;
+    transition: transform .2s;
 }
 .doc-content.print{
     z-index: 10;
@@ -124,4 +125,92 @@ html, body, .doc-container {
 .doc-content.print .doc-content-wrapper{
     width: 100%;
     box-shadow: none;
+    transition: width .3s ease-in-out;
+}
+.doc-footer{
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+    background-color: rgb(240, 240, 240);
+    border-top: 1px solid rgb(228, 228, 228);
+    z-index: 1;
+}
+.doc-statusbar{
+    padding: 0 22px;
+    background-color: #f0f0f0;
+    border-top: solid #e4e4e4 1px;
+}
+.doc-statusbar>.doc-toolbar-btn-divide{
+    height: 10px;
+    margin-top: 7px;
+}
+.doc-statusbar>.right{
+    float: right;
+}
+.doc-doc-statusbar-group{
+    display: flex;
+}
+.doc-doc-statusbar-group:hover{
+    background-color: #e7e7e7;
+}
+.doc-statusbar-btn{
+    width: 24px;
+    height: 25px;
+    cursor: default;
+}
+.doc-statusbar-btn:hover{
+    background-color: #dedede;
+}
+.doc-statusbar-btn:active{
+    background-color: #d5d5d5;
+}
+.doc-statusbar-btn.fullscreen{
+    background: url("data:image/svg+xml,%3c%3fxml version='1.0' encoding='UTF-8'%3f%3e %3csvg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e %3ctitle%3ebottombar/fill%3c/title%3e %3cg id='bottombar/fill' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3e %3cg id='bottombar_fill'%3e %3crect id='%e7%9f%a9%e5%bd%a2' x='0' y='0' width='24' height='24'%3e%3c/rect%3e %3cpath d='M9.809%2c13.309 L10.692%2c14.192 L7.134%2c17.752 L9.99162909%2c17.7512208 L9.99162909%2c19 L5%2c19 L5%2c14.0048834 L6.24790727%2c14.0048834 L6.247%2c16.873 L9.809%2c13.309 Z M14.191%2c13.309 L17.753%2c16.873 L17.7520927%2c14.0048834 L19%2c14.0048834 L19%2c19 L14.0083709%2c19 L14.0083709%2c17.7512208 L16.866%2c17.752 L13.308%2c14.192 L14.191%2c13.309 Z M9.99162909%2c5 L9.99162909%2c6.24877916 L7.133%2c6.248 L10.692%2c9.808 L9.809%2c10.691 L6.247%2c7.127 L6.24790727%2c9.99511664 L5%2c9.99511664 L5%2c5 L9.99162909%2c5 Z M19%2c5 L19%2c9.99511664 L17.7520927%2c9.99511664 L17.753%2c7.127 L14.191%2c10.691 L13.308%2c9.808 L16.867%2c6.248 L14.0083709%2c6.24877916 L14.0083709%2c5 L19%2c5 Z' id='%e5%bd%a2%e7%8a%b6%e7%bb%93%e5%90%88' fill='%23464D5A'%3e%3c/path%3e %3c/g%3e %3c/g%3e %3c/svg%3e") no-repeat;
+    background-size: 24px 24px;
+}
+.doc-statusbar-btn.fullscreen.open{
+    background: url("data:image/svg+xml,%3c%3fxml version='1.0' encoding='UTF-8'%3f%3e %3csvg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e %3ctitle%3ebottombar/out/fill%3c/title%3e %3cg id='bottombar/out/fill' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3e %3crect id='%e7%9f%a9%e5%bd%a2' x='0' y='0' width='24' height='24'%3e%3c/rect%3e %3cpath d='M5.8824037%2c19 L5%2c18.1169798 L8.866%2c14.248 L6.00837091%2c14.2487792 L6.00837091%2c13 L11%2c13 L11%2c17.9951166 L9.75209273%2c17.9951166 L9.753%2c15.127 L5.8824037%2c19 Z M18.1175963%2c19 L14.247%2c15.127 L14.2479073%2c17.9951166 L13%2c17.9951166 L13%2c13 L17.9916291%2c13 L17.9916291%2c14.2487792 L15.134%2c14.248 L19%2c18.1169798 L18.1175963%2c19 Z M6.00837091%2c11 L6.00837091%2c9.75122084 L8.867%2c9.752 L5%2c5.88302021 L5.8824037%2c5 L9.753%2c8.873 L9.75209273%2c6.00488336 L11%2c6.00488336 L11%2c11 L6.00837091%2c11 Z M13%2c11 L13%2c6.00488336 L14.2479073%2c6.00488336 L14.247%2c8.873 L18.1175963%2c5 L19%2c5.88302021 L15.133%2c9.752 L17.9916291%2c9.75122084 L17.9916291%2c11 L13%2c11 Z' id='%e5%bd%a2%e7%8a%b6%e7%bb%93%e5%90%88' fill='%23464D5A'%3e%3c/path%3e %3c/g%3e %3c/svg%3e") no-repeat;
+}
+.doc-statusbar-btn.minus{
+    position: relative;
+}
+.doc-statusbar-btn.minus::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 12px;
+    left: 7px;
+    width: 10px;
+    height: 2px;
+    background-color: #464d5a;
+}
+.doc-statusbar-btn.percent{
+    width: 46px;
+    text-align: center;
+    line-height: 25px;
+    font-size: 12px;
+}
+.doc-statusbar-btn.plus{
+    position: relative;
+}
+.doc-statusbar-btn.plus::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 12px;
+    left: 7px;
+    width: 10px;
+    height: 2px;
+    background-color: #464d5a;
+}
+.doc-statusbar-btn.plus::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 8px;
+    left: 11px;
+    width: 2px;
+    height: 10px;
+    background-color: #464d5a;
 }
